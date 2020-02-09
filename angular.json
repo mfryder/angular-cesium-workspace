@@ -2,5 +2,46 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1, 
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "angular-cesium-library": {
+      "projectType": "library",
+      "root": "projects/angular-cesium-library",
+      "sourceRoot": "projects/angular-cesium-library/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/angular-cesium-library/tsconfig.lib.json",
+            "project": "projects/angular-cesium-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular-cesium-library/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-cesium-library/src/test.ts",
+            "tsConfig": "projects/angular-cesium-library/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-cesium-library/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-cesium-library/tsconfig.lib.json",
+              "projects/angular-cesium-library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "defaultProject": "angular-cesium-library"
 }
