@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Cesium } from 'cesium';
+import { Cesium } from 'Cesium';
 
 @Component({
-  selector: 'lib-angular-cesium-library',
+  selector: 'ryder-angular-cesium-component',
   templateUrl: './angular-cesium-library.component.html',
   styles: []
 })
@@ -15,6 +15,4 @@ export class AngularCesiumLibraryComponent implements OnInit {
       terrainProvider: Cesium.createWorldTerrain()
     });
   }
-
-
 }

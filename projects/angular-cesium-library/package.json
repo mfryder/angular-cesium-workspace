@@ -10,8 +10,5 @@
   "devDependencies": {
     "karma-junit-reporter": "^2.0.1",
     "karma-spec-reporter": "0.0.32"
-  },
-  "dependencies": {
-    "cesium": "^1.66.0"
   }
 }
